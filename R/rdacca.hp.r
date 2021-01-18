@@ -1,15 +1,15 @@
 #' Hierarchical Partitioning for Canonical Analysis
 
-#' @param  dv Response variables. if method=dbRDA, dv is the "dist" matrix.
+#' @param  dv Response variables. if method="dbRDA", dv is the "dist" matrix.
 #' @param  iv Explanatory variables, typically of environmental variables.
 #' @param  method The type of canonical analysis: RDA, dbRDA or CCA, the default is "RDA".
 #' @param  type The type of total explained variation: "adjR2" is adjusted R-squared and "R2" for unadjusted R-squared, the default is "adjR2".
 #' @param  trace logical value, if TRUE, the vaules of commonality (2^N-1for N explanatory variables) are outputed,the default is FALSE.
+#' @param  plot.perc logical value, if TRUE, the bar plot (based on ggplot2) of the percentage to independent effects of variables to total Rsquared, the default is FALSE to show plot with original independent effects.
 
 #' @details This function calculates the independent contribution of each explanatory variable to explained variation (R-squared) on canonical analysis (RDA,CCA and dbRDA),
-#' applying the hierarchy algorithm of Chevan, A. and Sutherland, M. 1991 Hierarchical Partitioning.The American Statistician, 90--96. DOI: 10.1080/00031305.1991.10475776. 
-#' Under the idea of hierarchy algorithm, the shared R2 can be divided into equal components by number of involved variables, and then allocated equally to these variables as joint effects.
-#' The independent contribution of each explanatory variable is the sum of all its allocated common R2 and its unique R2. The order of importance of explanatory variables are determined by their independent contributions. 
+#' applying the hierarchy algorithm of Chevan and Sutherland (1991). The algorithm is that all joint R-squared will be decomposed into equal fractions by number
+#' of involved explanatory variables and average assigned to these variables. Independent R-squared of each variable will be the sum of assigned R-squared from joint R-squared and unique R-squared.
 
 #' @return a list containing
 #' @return \item{Method_Type}{The type of canonical analysis and the type of total explained variation.}
@@ -32,7 +32,7 @@
 #'rdacca.hp(mite,mite.env,method="CCA",type="adjR2")
 
 
-rdacca.hp <- function (dv,iv,method=c("RDA","dbRDA","CCA"),type=c("adjR2","R2"),trace = FALSE)
+rdacca.hp <- function (dv,iv,method=c("RDA","dbRDA","CCA"),type=c("adjR2","R2"),trace = FALSE,plot.perc = FALSE)
 {
   if(sum(is.na(dv))>=1|sum(is.na(iv))>=1)
   {cat("Error: NA is not allowed in this analysis")}
@@ -197,7 +197,17 @@ else
 {outputList<-list(Method_Type=c(method,type),R.squared=total,Var.part= VariableImportance)}
 #class(outputList) <- "rdacca.hp" # Class definition
 
+if(plot.perc)
+{tips3=data.frame(variable=rownames(outputList$Var.part), value=as.numeric(outputList$Var.part[,"I.perc(%)"]))
+gg=ggplot2::ggplot(tips3, ggplot2::aes(x = stats::reorder(variable, -value), y = value)) + ggplot2::geom_bar(stat = "identity")+
+  ggplot2::theme_minimal()+ggplot2::labs(x="Variables",y="Independent effect to Rsquared (%)")}
+else
+{tips2=data.frame(variable=rownames(outputList$Var.part), value=as.numeric(outputList$Var.part[,"Independent"]))
+gg=ggplot2::ggplot(tips2, ggplot2::aes(x = stats::reorder(variable, -value), y = value)) + ggplot2::geom_bar(stat = "identity")+
+  ggplot2::theme_minimal()+ggplot2::labs(x="Variables",y="Independent effect")}
 
+print(gg)
+#class(outputList) <- "rdaccahp" # Class definition
 
 return(outputList)
 }

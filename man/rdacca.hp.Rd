@@ -9,11 +9,12 @@ rdacca.hp(
   iv,
   method = c("RDA", "dbRDA", "CCA"),
   type = c("adjR2", "R2"),
-  trace = FALSE
+  trace = FALSE,
+  plot.perc = FALSE
 )
 }
 \arguments{
-\item{dv}{Response variables. if method=dbRDA, dv is the "dist" matrix.}
+\item{dv}{Response variables. if method="dbRDA", dv is the "dist" matrix.}
 
 \item{iv}{Explanatory variables, typically of environmental variables.}
 
@@ -22,6 +23,8 @@ rdacca.hp(
 \item{type}{The type of total explained variation: "adjR2" is adjusted R-squared and "R2" for unadjusted R-squared, the default is "adjR2".}
 
 \item{trace}{logical value, if TRUE, the vaules of commonality (2^N-1for N explanatory variables) are outputed,the default is FALSE.}
+
+\item{plot.perc}{logical value, if TRUE, the bar plot (based on ggplot2) of the percentage to independent effects of variables to total Rsquared, the default is FALSE to show plot with original independent effects.}
 }
 \value{
 a list containing
@@ -39,9 +42,8 @@ Hierarchical Partitioning for Canonical Analysis
 }
 \details{
 This function calculates the independent contribution of each explanatory variable to explained variation (R-squared) on canonical analysis (RDA,CCA and dbRDA),
-applying the hierarchy algorithm of Chevan, A. and Sutherland, M. 1991 Hierarchical Partitioning.The American Statistician, 90--96. DOI: 10.1080/00031305.1991.10475776. 
-Under the idea of hierarchy algorithm, the shared R2 can be divided into equal components by number of involved variables, and then allocated equally to these variables as joint effects.
-The independent contribution of each explanatory variable is the sum of all its allocated common R2 and its unique R2. The order of importance of explanatory variables are determined by their independent contributions.
+applying the hierarchy algorithm of Chevan and Sutherland (1991). The algorithm is that all joint R-squared will be decomposed into equal fractions by number
+of involved explanatory variables and average assigned to these variables. Independent R-squared of each variable will be the sum of assigned R-squared from joint R-squared and unique R-squared.
 }
 \examples{
 library(vegan)
