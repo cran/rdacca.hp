@@ -1,8 +1,7 @@
 Package: rdacca.hp
 Type: Package
 Title: Hierarchical and Variation Partitioning for Canonical Analysis
-        Without Limits for the Number of Predictors (Matrices)
-Version: 0.5-3
+Version: 0.5-4
 Date: 2021-2-6
 Depends: R (>= 3.4.0),vegan,ggplot2
 Author: Jiangshan Lai,Pedro Peres-neto
@@ -14,6 +13,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2021-02-06 08:30:27 UTC; Thinkpad
+Packaged: 2021-02-06 12:35:17 UTC; Thinkpad
 Repository: CRAN
-Date/Publication: 2021-02-06 08:50:03 UTC
+Date/Publication: 2021-02-07 22:50:02 UTC
