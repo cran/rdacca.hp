@@ -1,7 +1,7 @@
-3cdf6ece10cf1c7b1a670aadc685435c *DESCRIPTION
+a9bebec5c979638d36a3307e2b4b1862 *DESCRIPTION
 6242d0ee08311103ac34914d66872883 *NAMESPACE
-7fff63b79e2397c6257722ae38a3aab9 *R/CanonicalFunctions.r
+73ec6926f94e27a82c6f78128b756e55 *R/CanonicalFunctions.r
 94fa18889f0055c8e344b59bc9febbe9 *R/globals.r
-da79ac1630502f145fd12cc6ac577cf2 *R/rdacca.hp.r
-01e77567143fe269ae0feab4d4d5cf1a *man/Canonical.Rsq.Rd
-f88fdc02bee1a79a381ea02ca69fc3a0 *man/rdacca.hp.Rd
+0c6dc762be6d98c38dd62d92b9a16179 *R/rdacca.hp.r
+eac94d5343d134c239b6ca636c2c74bd *man/Canonical.Rsq.Rd
+4f8dd4b70ae15abf3ca69daf57ef4551 *man/rdacca.hp.Rd
