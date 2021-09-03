@@ -1,8 +1,8 @@
 Package: rdacca.hp
 Type: Package
 Title: Hierarchical and Variation Partitioning for Canonical Analysis
-Version: 1.0-1
-Date: 2021-8-10
+Version: 1.0-2
+Date: 2021-9-3
 Depends: R (>= 3.4.0),vegan,ggplot2
 Author: Jiangshan Lai,Pedro Peres-Neto
 Maintainer: Jiangshan Lai <lai@ibcas.ac.cn>
@@ -12,6 +12,6 @@ URL: https://github.com/laijiangshan/rdacca.hp
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2021-08-11 07:37:24 UTC; Thinkpad
+Packaged: 2021-09-03 08:33:43 UTC; Thinkpad
 Repository: CRAN
-Date/Publication: 2021-08-11 07:50:01 UTC
+Date/Publication: 2021-09-03 08:50:02 UTC
