@@ -1,12 +1,12 @@
-da3e2eea53b2a6a992b49a5fedbcf06c *DESCRIPTION
+fc47b9def492e594a4cedb09641c9dd1 *DESCRIPTION
 8a1c6648cb2709eaa16cf456aa61a559 *NAMESPACE
 59072c09ffb319e6406cc2d28e3e2e23 *R/creatbin.r
 a4023f9c066f3f88c1b9a1b853966e6f *R/genList.r
 94fa18889f0055c8e344b59bc9febbe9 *R/globals.r
-a1879325c75c6469f3dfddf97cbf4e3d *R/permu.hp.r
+655dfaa0d79b47a409b358115a47ee88 *R/permu.hp.r
 f8dd78db70bd76e189dfd5803e2b7089 *R/plot.rdaccahp.r
 4464abe1a8b0ef4e2d4774b6b58b9503 *R/rdacca.hp.r
-6cc12bbc8f75820bdf0aefa67089fe76 *inst/CITATION
+8f74a2218c66a22fb6e914d077edf128 *inst/CITATION
 96c693ae667233267dd9ffeb04de529b *man/creatbin.Rd
 cb124afe643a8a06f264bca03d979ced *man/genList.Rd
 3fc303d381e5f3bb6f1430fae6b119cb *man/odd.Rd
