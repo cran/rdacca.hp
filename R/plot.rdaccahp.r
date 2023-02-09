@@ -17,7 +17,7 @@
 
 
 plot.rdaccahp <- function(x, plot.perc = FALSE, ...){
-  if (class(x) != "rdaccahp"){
+  if (!inherits(x,"rdaccahp")){
     stop("x should be the output of rdacca.hp()")
   }
 
