@@ -19,9 +19,8 @@
 #' @return \item{Var.part}{If var.part=TRUE, a matrix containing the value and percentage of all commonality (2^N-1 for N predictors or matrices).}
 #' @return \item{Hier.part}{A matrix containing unique, average shared, individual effects and percentage of individual effects towards total explained variation for each predictor or matrix.}
 
-#' @author {Jiangshan Lai} \email{lai@ibcas.ac.cn}
-#' @author {Pedro Peres-Neto} \email{pedro.peres-neto@concordia.ca}
-#' @author {Kim Nimon} \email{kim.nimon@gmail.com}
+#' @author {Jiangshan Lai} \email{lai@njfu.edu.cn}
+
 
 #' @references
 #' \itemize{

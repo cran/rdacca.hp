@@ -81,9 +81,5 @@ rdacca.hp(mite,iv,method="CCA",var.part = TRUE)
 }
 }
 \author{
-{Jiangshan Lai} \email{lai@ibcas.ac.cn}
-
-{Pedro Peres-Neto} \email{pedro.peres-neto@concordia.ca}
-
-{Kim Nimon} \email{kim.nimon@gmail.com}
+{Jiangshan Lai} \email{lai@njfu.edu.cn}
 }

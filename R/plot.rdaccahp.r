@@ -6,7 +6,7 @@
 #' @param ... unused
 #' @return a ggplot object
 #' @author {Jiangshan Lai} \email{lai@njfu.edu.cn}
-#' @author {Yao Liu} \email{liuyao@stu.xmu.edu.cn}
+
 
 #' @export
 #' @examples
@@ -50,7 +50,7 @@ if(names(x)[3]=="Var.part")
   if (!nvar%in% 2:4)
     stop("Venn diagram supports only 2-4 variables")
   else if (nvar == 2)
-	Var <- Var.part$Fractions[c(1, 3, 2)]
+	Var <- Var.part$Fractions[1:3]
   else if (nvar == 3)
     Var <- Var.part$Fractions[c(1:4, 6, 5, 7)]
   else if (nvar == 4)

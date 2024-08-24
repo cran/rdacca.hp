@@ -34,6 +34,4 @@ plot(avc,color = c("#8DD3C7", "#FFFFB3", "#BEBADA"))
 }
 \author{
 {Jiangshan Lai} \email{lai@njfu.edu.cn}
-
-{Yao Liu} \email{liuyao@stu.xmu.edu.cn}
 }
