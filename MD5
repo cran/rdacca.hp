@@ -1,11 +1,11 @@
-84d67a4b816a2a3e755d1858bb579468 *DESCRIPTION
+c97773673756bcc6efe8f18300d2e351 *DESCRIPTION
 ba3039e93693674dce12e9b6316dc7ce *NAMESPACE
 59072c09ffb319e6406cc2d28e3e2e23 *R/creatbin.r
 a4023f9c066f3f88c1b9a1b853966e6f *R/genList.r
 94fa18889f0055c8e344b59bc9febbe9 *R/globals.r
 e6eabe8add63f44e40cedc1c52fd24f2 *R/permu.hp.r
 5f879be9159970ffd39bd2b49f74470a *R/plot.rdaccahp.r
-06225331d37455f425e6c675a12da073 *R/rdacca.hp.r
+625d2440b7df8b1cfea2e6f504e3f5b7 *R/rdacca.hp.r
 1f29cf2f5dbceadc2749258c868ad980 *R/zzz.R
 028aa1eb76c4d89ceed233269b7f52f4 *inst/CITATION
 96c693ae667233267dd9ffeb04de529b *man/creatbin.Rd
@@ -13,4 +13,4 @@ cb124afe643a8a06f264bca03d979ced *man/genList.Rd
 3fc303d381e5f3bb6f1430fae6b119cb *man/odd.Rd
 1b73accd0ab1c29b9db335c74cf828cb *man/permu.hp.Rd
 853e96b7136296d7fd8a8c8474962aa5 *man/plot.rdaccahp.Rd
-8c2fe5aaa95024adb949b1e22e52f1ef *man/rdacca.hp.Rd
+d617a7b79b699f418de950b6ef56e6b4 *man/rdacca.hp.Rd

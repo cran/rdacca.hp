@@ -4,6 +4,7 @@
 #' @param  iv Predictorsrepresented in either a data frame or a list of data frames. If it is a data frame, the relative importance of each column of the data frame will be evaluated; if it is a list, the relative importance of each element (matrix) will be evaluated.
 #' @param  method Type of canonical analysis to be performed, should be a character string, either "RDA", "dbRDA" or "CCA", the default is "RDA". If the response variable (dv) is a numerical vector and method="RDA", the hierarchical and variation partitioning for the classical multiple regression is implemented.If response variable (dv) is of class "dist", "dbRDA" will be chosen automatically.
 #' @param  type The type of total explained variation, either "R2" or "adjR2", in which "R2" is unadjusted R-square and "adjR2" is adjusted R-square, the default is "adjR2". The adjusted R-square is calculated using Ezekiel's formula (Ezekiel 1930) for RDA and dbRDA, while permutation procedure is used for CCA (Peres-Neto et al. 2006). 
+#' @param  dbrdatype The type of dbrda, either "dbrda" or "capscale".dbrdatype The type of dbrda, either "dbrda" or "capscale", where "dbrda" performs a direct distance-based redundancy analysis while "capscale" first conducts a principal coordinates analysis (PCoA) followed by RDA, which may lead to differences in explained variance and handling of non-Euclidean distances.
 #' @param  scale Logical; If the columns of dv should be standardized to unit variance when method="RDA" is applied.
 #' @param  add Logical; Specifies whether a constant should be added to the non-diagonal values to euclidify dissimilarities (see dbrda function in vegan for details). Choice "lingoes" (or TRUE) uses the recommended method of Legendre & Anderson (1999: "method 1") and "cailliez" uses their "method 2". The argument has an effect only when method="dbRDA".
 #' @param  sqrt.dist Logical, Specifies whether the square root of dissimilarities should be taken. This often euclidifies dissimilarities. The argument has an effect only when method="dbRDA"(see dbrda function in vegan for details).
@@ -52,7 +53,7 @@
 #'rdacca.hp(mite,iv,method="CCA",var.part = TRUE)
 
 
-rdacca.hp <- function (dv,iv,method=c("RDA","dbRDA","CCA"),type=c("adjR2","R2"),scale=FALSE,add = FALSE, sqrt.dist = FALSE,n.perm=1000,var.part = FALSE) 
+rdacca.hp <- function (dv,iv,method=c("RDA","dbRDA","CCA"),type=c("adjR2","R2"),dbrdatype=c("dbrda","capscale"),scale=FALSE,add = FALSE, sqrt.dist = FALSE,n.perm=1000,var.part = FALSE) 
 {
 
 if(is.data.frame(iv)||is.matrix(iv))
@@ -65,6 +66,7 @@ if(is.data.frame(iv)||is.matrix(iv))
   else
   {method <- method[1]
   type <- type[1]
+  dbrdatype <- dbrdatype[1]
   if(inherits(dv, "dist"))
   {method <- "dbRDA"}
   if (method %in% c("dbRDA", "dbrda", "DBRDA") && !inherits(dv, "dist"))
@@ -99,7 +101,10 @@ if(is.data.frame(iv)||is.matrix(iv))
     }
 	if(method=="dbRDA"||method=="dbrda"||method=="DBRDA")
     {
-	gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))
+	if(dbrdatype=="dbrda")
+	{gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
+	if(dbrdatype=="capscale")
+	{gfa <- vegan::RsquareAdj(vegan::capscale(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
    }	
    if(type=="R2")commonM[i, 2] <- gfa$r.squared
    if(type=="adjR2")commonM[i, 2] <- gfa$adj.r.squared	
@@ -240,6 +245,7 @@ else
   else
   {method <- method[1]
   type <- type[1]
+  dbrdatype <- dbrdatype[1]
   if(inherits(dv, "dist"))
   {method <- "dbRDA"}
   if(method=="dbRDA"||method=="dbrda"||method=="DBRDA"){
@@ -296,7 +302,10 @@ else
     }
 	if(method=="dbRDA"||method=="dbrda"||method=="DBRDA")
     {
-	gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))
+	if(dbrdatype=="dbrda")
+	{gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
+	if(dbrdatype=="capscale")
+	{gfa <- vegan::RsquareAdj(vegan::capscale(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
    }	
    if(type=="R2")commonM[i, 2] <- gfa$r.squared
    if(type=="adjR2")commonM[i, 2] <- gfa$adj.r.squared	
@@ -316,7 +325,11 @@ else
     }
 	if(method=="dbRDA"||method=="dbrda"||method=="DBRDA")
     {
-	gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))
+	if(dbrdatype=="dbrda")
+	{gfa <- vegan::RsquareAdj(vegan::dbrda(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
+	if(dbrdatype=="capscale")
+	{gfa <- vegan::RsquareAdj(vegan::capscale(dv~.,tmp.design.ct,add=add,sqrt.dist = sqrt.dist))}
+	
    }	
    if(type=="R2")commonM[i, 2] <- gfa$r.squared
    if(type=="adjR2")commonM[i, 2] <- gfa$adj.r.squared	

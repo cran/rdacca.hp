@@ -9,6 +9,7 @@ rdacca.hp(
   iv,
   method = c("RDA", "dbRDA", "CCA"),
   type = c("adjR2", "R2"),
+  dbrdatype = c("dbrda", "capscale"),
   scale = FALSE,
   add = FALSE,
   sqrt.dist = FALSE,
@@ -24,6 +25,8 @@ rdacca.hp(
 \item{method}{Type of canonical analysis to be performed, should be a character string, either "RDA", "dbRDA" or "CCA", the default is "RDA". If the response variable (dv) is a numerical vector and method="RDA", the hierarchical and variation partitioning for the classical multiple regression is implemented.If response variable (dv) is of class "dist", "dbRDA" will be chosen automatically.}
 
 \item{type}{The type of total explained variation, either "R2" or "adjR2", in which "R2" is unadjusted R-square and "adjR2" is adjusted R-square, the default is "adjR2". The adjusted R-square is calculated using Ezekiel's formula (Ezekiel 1930) for RDA and dbRDA, while permutation procedure is used for CCA (Peres-Neto et al. 2006).}
+
+\item{dbrdatype}{The type of dbrda, either "dbrda" or "capscale".dbrdatype The type of dbrda, either "dbrda" or "capscale", where "dbrda" performs a direct distance-based redundancy analysis while "capscale" first conducts a principal coordinates analysis (PCoA) followed by RDA, which may lead to differences in explained variance and handling of non-Euclidean distances.}
 
 \item{scale}{Logical; If the columns of dv should be standardized to unit variance when method="RDA" is applied.}
 
