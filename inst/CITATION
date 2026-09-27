@@ -1,16 +1,16 @@
 citHeader("To cite rdacca.hp in publications use:")
 
 bibentry(bibtype = "Article",
-         title        = "Generalizing hierarchical and variation partitioning in multiple regression and canonical analysis using the rdacca.hp R package.",
-         author       = as.person("Jiangshan Lai [aut],Yi Zou [aut],Jinlong Zhang [aut],Pedro Peres-Neto [aut]"),
-         journal      = "Methods in Ecology and Evolution",
-		  volume       = "13(4):782-788",
-         year         = "2022",
-         url          = "https://doi.org/10.1111/2041-210X.13800",
+         title        = "Extension of the rdacca.hp package to grouped predictors and advanced variation partitioning in canonical analyses.",
+         author       = as.person("Jiangshan Lai [aut]"),
+         journal      = "Current Biodiversity",
+		  volume       = "1",
+         year         = "2026",
+         url          = "https://doi.org/10.3724/cbd.20260009",
 
          textVersion  =
-           paste("Jiangshan Lai, Yi Zou, Jinlong Zhang, Pedro Peres-Neto (2022).",
-                 "Generalizing hierarchical and variation partitioning in multiple regression and canonical analysis using the rdacca.hp R package.",
-                 "Methods in Ecology and Evolution,13(4):782-788",
-                 "URL  https://doi.org/10.1111/2041-210X.13800")
+           paste("Jiangshan Lai(2026).",
+                 "Extension of the rdacca.hp package to grouped predictors and advanced variation partitioning in canonical analyses.",
+                 "Current Biodiversity,1",
+                 "URL  https://doi.org/10.3724/cbd.20260009")
 )

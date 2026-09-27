@@ -1,4 +1,4 @@
-c97773673756bcc6efe8f18300d2e351 *DESCRIPTION
+c4dc7ae217882c00e118a3a5f7c5d4d1 *DESCRIPTION
 ba3039e93693674dce12e9b6316dc7ce *NAMESPACE
 59072c09ffb319e6406cc2d28e3e2e23 *R/creatbin.r
 a4023f9c066f3f88c1b9a1b853966e6f *R/genList.r
@@ -7,7 +7,7 @@ e6eabe8add63f44e40cedc1c52fd24f2 *R/permu.hp.r
 5f879be9159970ffd39bd2b49f74470a *R/plot.rdaccahp.r
 625d2440b7df8b1cfea2e6f504e3f5b7 *R/rdacca.hp.r
 1f29cf2f5dbceadc2749258c868ad980 *R/zzz.R
-028aa1eb76c4d89ceed233269b7f52f4 *inst/CITATION
+ec6ceb087ca8ff54e730b4dd1712aed7 *inst/CITATION
 96c693ae667233267dd9ffeb04de529b *man/creatbin.Rd
 cb124afe643a8a06f264bca03d979ced *man/genList.Rd
 3fc303d381e5f3bb6f1430fae6b119cb *man/odd.Rd
